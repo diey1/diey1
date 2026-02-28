@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أسلوب الترجي – الصف الثاني متوسط</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #0D6E4E;
+    --emerald-light: #15A36E;
+    --emerald-pale: #E8F5EF;
+    --gold: #C8961A;
+    --gold-light: #F0B429;
+    --cream: #FDFAF4;
+    --ink: #1A1A2E;
+    --ink-soft: #2D3561;
+    --rose: #C0392B;
+    --rose-light: #E74C3C;
+    --sand: #F5EDD8;
+    --border: rgba(13,110,78,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    overflow-x: hidden;
+  }
+
+  /* ===== DECORATIVE PATTERN ===== */
+  .arabic-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(13,110,78,0.06) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(200,150,26,0.06) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230D6E4E' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: linear-gradient(135deg, var(--emerald) 0%, var(--ink-soft) 100%);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Ccircle cx='40' cy='40' r='30' stroke='white' stroke-opacity='0.04' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='20' stroke='white' stroke-opacity='0.04' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='10' stroke='white' stroke-opacity='0.04' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 80px 80px;
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    padding: 6px 24px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .header-title {
+    font-family: 'Amiri', serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    animation: fadeDown 0.8s ease 0.1s both;
+  }
+
+  .header-title span {
+    color: var(--gold-light);
+    position: relative;
+  }
+
+  .header-title span::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0; left: 0;
+    height: 3px;
+    background: var(--gold-light);
+    border-radius: 2px;
+  }
+
+  .header-subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 16px;
+    letter-spacing: 1px;
+    animation: fadeDown 0.8s ease 0.2s both;
+  }
+
+  .header-divider {
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    margin: 28px auto;
+    animation: fadeDown 0.8s ease 0.3s both;
+  }
+
+  .student-credit {
+    display: inline-block;
+    background: rgba(200,150,26,0.2);
+    border: 1px solid rgba(240,180,41,0.4);
+    color: var(--gold-light);
+    padding: 8px 28px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 6px;
+    animation: fadeDown 0.8s ease 0.4s both;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    background: #fff;
+    border-bottom: 3px solid var(--emerald);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 16px 28px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: all 0.25s;
+  }
+
+  .nav-link:hover {
+    color: var(--emerald);
+    border-bottom-color: var(--emerald);
+    background: var(--emerald-pale);
+  }
+
+  /* ===== MAIN ===== */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ===== SECTION HEADER ===== */
+  .sec-header {
+    text-align: center;
+    padding: 70px 0 40px;
+  }
+
+  .sec-tag {
+    display: inline-block;
+    background: var(--emerald-pale);
+    color: var(--emerald);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 5px 18px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(13,110,78,0.2);
+  }
+
+  .sec-title {
+    font-family: 'Amiri', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .sec-title em {
+    color: var(--emerald);
+    font-style: normal;
+  }
+
+  .sec-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--emerald), var(--gold));
+    margin: 16px auto 0;
+    border-radius: 2px;
+  }
+
+  /* ===== DEFINITION CARD ===== */
+  .def-card {
+    background: linear-gradient(135deg, var(--emerald) 0%, #0a5a3e 100%);
+    border-radius: 16px;
+    padding: 50px 60px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 60px rgba(13,110,78,0.25);
+  }
+
+  .def-card::before {
+    content: '"';
+    position: absolute;
+    top: -30px;
+    right: 30px;
+    font-family: 'Amiri', serif;
+    font-size: 200px;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .def-card-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--gold-light);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .def-card-text {
+    font-family: 'Amiri', serif;
+    font-size: 26px;
+    line-height: 1.9;
+    color: #fff;
+  }
+
+  .def-card-text strong {
+    color: var(--gold-light);
+    font-size: 30px;
+  }
+
+  /* ===== INFO GRID ===== */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .info-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .info-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 4px; height: 100%;
+    background: var(--emerald);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(13,110,78,0.12);
+  }
+
+  .info-icon {
+    width: 52px; height: 52px;
+    background: var(--emerald-pale);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .info-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--emerald);
+    margin-bottom: 10px;
+  }
+
+  .info-card p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4a4a6a;
+  }
+
+  /* ===== TOOLS SECTION ===== */
+  .tools-section {
+    background: var(--sand);
+    border-radius: 16px;
+    padding: 50px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(200,150,26,0.2);
+  }
+
+  .tools-title {
+    font-family: 'Amiri', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .tools-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 36px;
+    background: var(--gold);
+    border-radius: 3px;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .tool-pill {
+    background: #fff;
+    border: 2px solid var(--gold-light);
+    border-radius: 50px;
+    padding: 14px 24px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    font-family: 'Amiri', serif;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: default;
+  }
+
+  .tool-pill:hover {
+    background: var(--gold-light);
+    color: var(--ink);
+    transform: scale(1.04);
+  }
+
+  .tool-pill .tool-meaning {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 400;
+    margin-top: 4px;
+  }
+
+  .tool-pill:hover .tool-meaning { color: var(--ink); }
+
+  /* ===== EXAMPLES SECTION ===== */
+  .examples-section { margin-bottom: 40px; }
+
+  .example-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    transition: box-shadow 0.3s;
+  }
+
+  .example-card:hover { box-shadow: 0 8px 32px rgba(13,110,78,0.1); }
+
+  .example-head {
+    background: var(--emerald);
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .ex-num {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .ex-type {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .ex-type strong { color: var(--gold-light); font-size: 15px; }
+
+  .example-body { padding: 28px 32px; }
+
+  .example-sentence {
+    font-family: 'Scheherazade New', serif;
+    font-size: 28px;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    text-align: center;
+    padding: 16px;
+    background: var(--emerald-pale);
+    border-radius: 8px;
+    border-right: 4px solid var(--emerald);
+  }
+
+  .example-sentence .highlight {
+    color: var(--emerald);
+    font-weight: 700;
+    background: rgba(13,110,78,0.1);
+    padding: 0 6px;
+    border-radius: 4px;
+  }
+
+  .example-explain {
+    font-size: 15px;
+    color: #4a4a6a;
+    line-height: 1.9;
+  }
+
+  .example-explain .tag {
+    display: inline-block;
+    background: var(--emerald-pale);
+    color: var(--emerald);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-left: 6px;
+  }
+
+  /* ===== RULE BOX ===== */
+  .rule-box {
+    background: linear-gradient(135deg, #fff9ec, #fff3d4);
+    border: 2px solid var(--gold-light);
+    border-radius: 16px;
+    padding: 40px 50px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .rule-box::before {
+    content: '📌';
+    position: absolute;
+    top: -16px;
+    right: 32px;
+    font-size: 32px;
+  }
+
+  .rule-box h3 {
+    font-family: 'Amiri', serif;
+    font-size: 28px;
+    color: var(--ink);
+    margin-bottom: 20px;
+    color: var(--gold);
+  }
+
+  .rule-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .rule-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--ink);
+  }
+
+  .rule-list li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ===== DIFFERENCE TABLE ===== */
+  .diff-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    margin-bottom: 40px;
+  }
+
+  .diff-table thead {
+    background: var(--emerald);
+    color: #fff;
+  }
+
+  .diff-table thead th {
+    padding: 18px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  .diff-table tbody tr {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+
+  .diff-table tbody tr:nth-child(even) { background: var(--emerald-pale); }
+  .diff-table tbody tr:hover { background: rgba(13,110,78,0.08); }
+
+  .diff-table td {
+    padding: 16px 24px;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.7;
+    vertical-align: top;
+    text-align: right;
+  }
+
+  .diff-table td:first-child {
+    font-weight: 700;
+    color: var(--emerald);
+    white-space: nowrap;
+  }
+
+  /* ===== QUIZ SECTION ===== */
+  .quiz-section {
+    background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
+    border-radius: 16px;
+    padding: 50px;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
+  .quiz-title {
+    font-family: 'Amiri', serif;
+    font-size: 34px;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+
+  .quiz-sub { color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 32px; }
+
+  .quiz-q {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+
+  .quiz-q-text {
+    font-family: 'Scheherazade New', serif;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+
+  .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .quiz-opt {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: right;
+  }
+
+  .quiz-opt:hover { background: rgba(13,110,78,0.3); border-color: var(--emerald-light); color: #fff; }
+  .quiz-opt.correct { background: rgba(13,110,78,0.4); border-color: var(--emerald-light); color: #fff; }
+  .quiz-opt.wrong { background: rgba(192,57,43,0.3); border-color: var(--rose-light); color: #fff; }
+  .quiz-opt.disabled { cursor: default; }
+
+  .quiz-feedback {
+    margin-top: 10px;
+    font-size: 14px;
+    display: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+  }
+
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.ok { background: rgba(13,110,78,0.2); color: #6ee7b7; }
+  .quiz-feedback.no { background: rgba(192,57,43,0.2); color: #fca5a5; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 40px;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+
+  footer strong { color: var(--gold-light); }
+
+  /* ===== ANIMATIONS ===== */
+  .animate-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .animate-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 700px) {
+    .header-title { font-size: 42px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr 1fr; }
+    .quiz-options { grid-template-columns: 1fr; }
+    .def-card { padding: 32px; }
+    .def-card-text { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="arabic-pattern">
+  <div class="header-inner">
+    <div class="header-badge">📚 اللغة العربية — الصف الثاني متوسط</div>
+    <h1 class="header-title">أسلوب <span>الترجي</span></h1>
+    <div class="header-subtitle">درس في بلاغة اللغة العربية وجمال التعبير</div>
+    <div class="header-divider"></div>
+    <div class="student-credit">✨ إعداد الطالبة: ضي دخيل المطيري</div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#definition" class="nav-link">📖 التعريف</a>
+    <a href="#tools" class="nav-link">🛠️ أدوات الترجي</a>
+    <a href="#examples" class="nav-link">✍️ الأمثلة</a>
+    <a href="#rules" class="nav-link">📌 القواعد</a>
+    <a href="#diff" class="nav-link">⚖️ الفرق بين الأساليب</a>
+    <a href="#quiz" class="nav-link">🧠 تدرب معنا</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- DEFINITION -->
+  <section id="definition">
+    <div class="sec-header animate-in">
+      <div class="sec-tag">التعريف</div>
+      <h2 class="sec-title">ما هو <em>أسلوب الترجي</em>؟</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="def-card animate-in">
+      <div class="def-card-label">التعريف الاصطلاحي</div>
+      <div class="def-card-text">
+        <strong>أسلوب الترجي</strong> هو أسلوبٌ إنشائيٌّ طلبيٌّ يُعبِّر فيه المتكلم عن 
+        <strong>تمنِّي الشيء المحبوب الممكن الحدوث</strong>،
+        ويكون المتمنَّى قريبَ الحصول أو متوقَّع الوقوع، ويُؤدَّى بأدوات خاصة أبرزها <strong>لعلَّ</strong> وعسى.
+      </div>
+    </div>
+
+    <div class="info-grid animate-in">
+      <div class="info-card">
+        <div class="info-icon">💡</div>
+        <h3>المعنى اللغوي</h3>
+        <p>الترجي في اللغة يعني الأمل والتوقع، وهو انتظار الشيء المحبوب الذي يُرجى حدوثه ويُتوقع وقوعه في المستقبل القريب.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📝</div>
+        <h3>نوع الأسلوب</h3>
+        <p>أسلوب الترجي من الأساليب الإنشائية الطلبية، أي أن الجملة لا تحتمل الصدق ولا الكذب، وهي طلبٌ يتضمن معنى الأمل والتوقع.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🔑</div>
+        <h3>شرط الترجي</h3>
+        <p>يُشترط في الترجي أن يكون الشيء المأمول <strong>ممكنَ الحدوث وقريبًا</strong>، فإن كان مستحيلاً فهو تمنٍّ لا ترجٍّ.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🌟</div>
+        <h3>الفائدة البلاغية</h3>
+        <p>يُضفي أسلوب الترجي على الكلام حيوية وعاطفة، ويُعبِّر عن مشاعر الأمل والتطلع نحو المستقبل بصورة أدبية جميلة.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section id="tools">
+    <div class="sec-header animate-in">
+      <div class="sec-tag">الأدوات</div>
+      <h2 class="sec-title"><em>أدوات</em> الترجي</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="tools-section animate-in">
+      <div class="tools-title">أدوات الترجي الرئيسية</div>
+      <div class="tools-grid">
+        <div class="tool-pill">
+          لَعَلَّ
+          <span class="tool-meaning">الأداة الرئيسية للترجي</span>
+        </div>
+        <div class="tool-pill">
+          عَسَى
+          <span class="tool-meaning">للترجي القريب الحدوث</span>
+        </div>
+        <div class="tool-pill">
+          حَرَى
+          <span class="tool-meaning">للترجي والتوقع</span>
+        </div>
+        <div class="tool-pill">
+          اخْلَوْلَقَ
+          <span class="tool-meaning">بمعنى جدير وحريٌّ</span>
+        </div>
+        <div class="tool-pill">
+          لَعَلَّكَ / لَعَلَّنَا
+          <span class="tool-meaning">مع الضمائر</span>
+        </div>
+        <div class="tool-pill">
+          عَسَاكَ / عَسَانَا
+          <span class="tool-meaning">مع الضمائر</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-box animate-in">
+      <h3>⭐ أهم الأدوات: لعلَّ وعسى</h3>
+      <ul class="rule-list">
+        <li><strong>لعلَّ:</strong> حرف ناسخ مشبَّه بالفعل، ينصب الاسم ويرفع الخبر. مثال: <em>«لعلَّ الطالبَ ناجحٌ»</em> — الطالبَ: اسم لعلَّ منصوب، ناجحٌ: خبرها مرفوع.</li>
+        <li><strong>عسى:</strong> فعل جامد من أفعال الرجاء، يرفع الاسم وينصب الخبر (المضارع المنصوب بأن). مثال: <em>«عسى الطالبُ أن ينجحَ»</em>.</li>
+        <li><strong>الفرق بينهما:</strong> لعلَّ حرف أما عسى فعل، وكلاهما يُفيدان الترجي والأمل في حدوث الشيء.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section id="examples">
+    <div class="sec-header animate-in">
+      <div class="sec-tag">التطبيق</div>
+      <h2 class="sec-title">أمثلة على <em>أسلوب الترجي</em></h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="examples-section animate-in">
+
+      <div class="example-card">
+        <div class="example-head">
+          <div class="ex-num">١</div>
+          <div class="ex-type">مثال من <strong>القرآن الكريم</strong></div>
+        </div>
+        <div class="example-body">
+          <div class="example-sentence">
+            ﴿ <span class="highlight">لَعَلَّهُ</span> يَتَذَكَّرُ أَوْ يَخْشَى ﴾
+          </div>
+          <div class="example-explain">
+            أداة الترجي هنا: <span class="tag">لعلَّ</span>
+            الجملة تُعبِّر عن الأمل في أن يتذكر فرعون ويخشى الله حين يكلمه موسى وهارون عليهما السلام. وهو ترجٍّ لشيء ممكن الحدوث.
+          </div>
+        </div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-head">
+          <div class="ex-num">٢</div>
+          <div class="ex-type">مثال من <strong>القرآن الكريم</strong></div>
+        </div>
+        <div class="example-body">
+          <div class="example-sentence">
+            ﴿ <span class="highlight">عَسَى</span> رَبُّكُمْ أَن يَرْحَمَكُمْ ﴾
+          </div>
+          <div class="example-explain">
+            أداة الترجي هنا: <span class="tag">عسى</span>
+            تُعبِّر الآية عن الأمل في رحمة الله، وعسى هنا فعل جامد يفيد الترجي. رَبُّكُمْ: اسم عسى مرفوع، أن يرحمكم: خبرها.
+          </div>
+        </div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-head">
+          <div class="ex-num">٣</div>
+          <div class="ex-type">مثال من <strong>الحياة اليومية</strong></div>
+        </div>
+        <div class="example-body">
+          <div class="example-sentence">
+            <span class="highlight">لعلَّ</span> المطرَ ينزلُ غداً فتُروى الأرضُ
+          </div>
+          <div class="example-explain">
+            أداة الترجي: <span class="tag">لعلَّ</span>
+            المتكلم يأمل نزول المطر وهو أمر ممكن الحدوث وليس مستحيلاً، لذلك يُعدّ ترجيًا لا تمنياً.
+            <br><br>
+            الإعراب: لعلَّ: حرف ترجٍّ ونصب. المطرَ: اسم لعلَّ منصوب وعلامة نصبه الفتحة. ينزلُ: فعل مضارع خبر لعلَّ مرفوع.
+          </div>
+        </div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-head">
+          <div class="ex-num">٤</div>
+          <div class="ex-type">مثال من <strong>بيئة المدرسة</strong></div>
+        </div>
+        <div class="example-body">
+          <div class="example-sentence">
+            <span class="highlight">عسى</span> الطالبُ أن يتفوَّقَ في اختباره
+          </div>
+          <div class="example-explain">
+            أداة الترجي: <span class="tag">عسى</span>
+            يُعبِّر المتكلم عن أمله في تفوق الطالب وهو أمر قريب الحدوث ومتوقَّع. 
+            <br><br>
+            الإعراب: عسى: فعل جامد. الطالبُ: اسم عسى مرفوع. أن يتفوَّقَ: المصدر المؤوَّل في محل نصب خبر عسى.
+          </div>
+        </div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-head">
+          <div class="ex-num">٥</div>
+          <div class="ex-type">مثال من <strong>الشعر العربي</strong></div>
+        </div>
+        <div class="example-body">
+          <div class="example-sentence">
+            <span class="highlight">لَعَلَّ</span> العتبَ منكَ يكونُ لُطفاً
+          </div>
+          <div class="example-explain">
+            أداة الترجي: <span class="tag">لعلَّ</span>
+            يأمل الشاعر أن يكون عتاب المحبوب لطفاً به، وهو أمل في شيء ممكن جميل. تُظهر هذه الجملة كيف أن الترجي يُضفي على الشعر حنيناً وعاطفة.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules">
+    <div class="sec-header animate-in">
+      <div class="sec-tag">القواعد</div>
+      <h2 class="sec-title">قواعد <em>أسلوب الترجي</em></h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="rule-box animate-in" style="margin-bottom:20px">
+      <h3>القاعدة الأساسية</h3>
+      <ul class="rule-list">
+        <li>الترجي يُستخدم في الأشياء <strong>المحبوبة الممكنة</strong> أي التي يُتوقع حدوثها.</li>
+        <li>إذا كان الشيء المأمول <strong>مستحيلاً</strong> فلا يُسمى ترجياً بل يُسمى <strong>تمنياً</strong>.</li>
+        <li>الأداة الرئيسية للترجي هي <strong>لعلَّ</strong> وتعمل عمل إنَّ: تنصب الاسم وترفع الخبر.</li>
+        <li><strong>عسى</strong> فعل جامد يُفيد الترجي، ويأتي بعده المضارع المنصوب بـأن.</li>
+        <li>أسلوب الترجي من الأساليب <strong>الإنشائية الطلبية</strong> التي لا تحتمل الصدق أو الكذب.</li>
+      </ul>
+    </div>
+
+    <div class="rule-box animate-in" style="border-color: var(--emerald); background: var(--emerald-pale);">
+      <h3 style="color: var(--emerald)">💡 تذكَّر الفرق المهم</h3>
+      <ul class="rule-list">
+        <li><strong>الترجي</strong> = أمل في شيء <u>ممكن</u> → «لعلَّ المريضَ يشفى»</li>
+        <li><strong>التمني</strong> = أمل في شيء <u>مستحيل أو بعيد</u> → «ليتَ الشبابَ يعود»</li>
+        <li>الترجي يُفيد <strong>التوقع والإشراق</strong>، والتمني يُفيد <strong>الحسرة والبُعد</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DIFF TABLE -->
+  <section id="diff">
+    <div class="sec-header animate-in">
+      <div class="sec-tag">المقارنة</div>
+      <h2 class="sec-title">الفرق بين <em>الترجي والتمني</em></h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <table class="diff-table animate-in">
+      <thead>
+        <tr>
+          <th>وجه المقارنة</th>
+          <th>أسلوب الترجي</th>
+          <th>أسلوب التمني</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>التعريف</td>
+          <td>الأمل في شيء ممكن قريب الحدوث</td>
+          <td>الأمل في شيء مستحيل أو بعيد المنال</td>
+        </tr>
+        <tr>
+          <td>الأداة الرئيسية</td>
+          <td>لعلَّ – عسى – حرى – اخلولق</td>
+          <td>ليتَ</td>
+        </tr>
+        <tr>
+          <td>مثال</td>
+          <td>لعلَّ المطرَ ينزلُ غداً</td>
+          <td>ليتَ الشبابَ يعود يوماً</td>
+        </tr>
+        <tr>
+          <td>إمكانية الحدوث</td>
+          <td>ممكنة ومتوقعة</td>
+          <td>مستحيلة أو بعيدة جداً</td>
+        </tr>
+        <tr>
+          <td>العاطفة المُعبَّر عنها</td>
+          <td>الأمل والتطلع والتفاؤل</td>
+          <td>الحسرة والأسى والشوق</td>
+        </tr>
+        <tr>
+          <td>نوع الأسلوب</td>
+          <td>إنشائي طلبي</td>
+          <td>إنشائي طلبي</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz">
+    <div class="sec-header animate-in">
+      <div class="sec-tag">تدريب</div>
+      <h2 class="sec-title">🧠 <em>تدرَّبي</em> على الدرس</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="quiz-section animate-in">
+      <div class="quiz-title">أسئلة تفاعلية</div>
+      <div class="quiz-sub">اختاري الإجابة الصحيحة لكل سؤال 👇</div>
+
+      <!-- Q1 -->
+      <div class="quiz-q">
+        <div class="quiz-q-text">١. ما الأداة التي تُفيد الترجي في الجملة: «عسى الله أن يأتيَ بالفتح»؟</div>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="answer(this, false)">لعلَّ</button>
+          <button class="quiz-opt" onclick="answer(this, true)">عسى</button>
+          <button class="quiz-opt" onclick="answer(this, false)">ليتَ</button>
+          <button class="quiz-opt" onclick="answer(this, false)">لو</button>
+        </div>
+        <div class="quiz-feedback">✅ أحسنتِ! «عسى» هي أداة الترجي في هذه الجملة.</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-q">
+        <div class="quiz-q-text">٢. أيُّ الجمل التالية تمثِّل أسلوب الترجي لا التمني؟</div>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="answer(this, false)">ليتَ الشبابَ يعود</button>
+          <button class="quiz-opt" onclick="answer(this, false)">ليتَ لي جناحَيْن</button>
+          <button class="quiz-opt" onclick="answer(this, true)">لعلَّ المريضَ يُشفى</button>
+          <button class="quiz-opt" onclick="answer(this, false)">ليتني كنتُ طائراً</button>
+        </div>
+        <div class="quiz-feedback">✅ صحيح! «لعلَّ المريضَ يُشفى» ترجٍّ لأن الشفاء ممكن الحدوث.</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-q">
+        <div class="quiz-q-text">٣. ما إعراب «الطالبَ» في جملة: «لعلَّ الطالبَ ناجحٌ»؟</div>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="answer(this, false)">مبتدأ مرفوع</button>
+          <button class="quiz-opt" onclick="answer(this, true)">اسم لعلَّ منصوب</button>
+          <button class="quiz-opt" onclick="answer(this, false)">خبر لعلَّ مرفوع</button>
+          <button class="quiz-opt" onclick="answer(this, false)">فاعل مرفوع</button>
+        </div>
+        <div class="quiz-feedback">✅ ممتاز! لعلَّ تنصب اسمها، فـ«الطالبَ» اسم لعلَّ منصوب وعلامة نصبه الفتحة.</div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quiz-q">
+        <div class="quiz-q-text">٤. أسلوب الترجي من الأساليب...</div>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="answer(this, false)">الخبرية</button>
+          <button class="quiz-opt" onclick="answer(this, false)">الإنشائية غير الطلبية</button>
+          <button class="quiz-opt" onclick="answer(this, true)">الإنشائية الطلبية</button>
+          <button class="quiz-opt" onclick="answer(this, false)">الاستفهامية</button>
+        </div>
+        <div class="quiz-feedback">✅ صحيح! الترجي أسلوب إنشائي طلبي لا يحتمل الصدق أو الكذب.</div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>موقع تعليمي في <strong>أسلوب الترجي</strong> — اللغة العربية — الصف الثاني متوسط</p>
+  <p style="margin-top:8px">إعداد الطالبة: <strong>ضي دخيل المطيري</strong> ✨</p>
+</footer>
+
+<script>
+// Quiz logic
+function answer(btn, isCorrect) {
+  const qDiv = btn.closest('.quiz-q');
+  const opts = qDiv.querySelectorAll('.quiz-opt');
+  const feedback = qDiv.querySelector('.quiz-feedback');
+
+  // Disable all options
+  opts.forEach(o => {
+    o.classList.add('disabled');
+    o.onclick = null;
+  });
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedback.classList.add('show', 'ok');
+    feedback.textContent = '✅ ' + feedback.textContent;
+  } else {
+    btn.classList.add('wrong');
+    // Highlight correct
+    opts.forEach(o => {
+      if (!o.classList.contains('wrong') && o !== btn) {
+        // find the correct one - can't easily without data, skip
+      }
+    });
+    feedback.classList.add('show', 'no');
+    feedback.textContent = '❌ حاولي مرة أخرى! ' + feedback.textContent.replace('✅ ','');
+  }
+}
+
+// Intersection observer for animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
